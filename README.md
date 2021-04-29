@@ -64,9 +64,8 @@ Within this package, the authors have diligently handled the errors for you. If 
 
 # **Configuration**
 
-The authors of `address_group_proj` package have created a config file that details 
+The authors of `address_group_proj` package have created a config file. This config file can be accessed through the package and the file is called config.ini
 
-The user can access the config file via this link
 
 
 # **Troubleshooting**
