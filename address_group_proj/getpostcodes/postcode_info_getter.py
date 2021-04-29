@@ -1,3 +1,4 @@
+from getpostcodes.postcode_variables import available_info_categories
 import requests
 import json
 import sys
@@ -51,3 +52,17 @@ def check_response(response: requests.Response) -> bool:
 
     else:
         return False
+
+
+def select_info_to_show(post_response: requests.Response, 
+                        selected_keys: list) -> None:
+
+    selected_info_types = []
+    for i in selected_keys:
+        selected_info_types.append(available_info_categories[i])
+
+    json_results = post_response.json()['result']
+
+    for address_dict in json_results:
+        for info_category in selected_info_types:
+            print(info_category, address_dict['result'][info_category])
