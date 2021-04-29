@@ -1,3 +1,6 @@
+from configparser import ConfigParser
+import json
+
 available_info_categories = {
                             0: "postcode", 
                             1: "quality", 
@@ -25,4 +28,9 @@ available_info_categories = {
                             23: "codes"
                         }
 
-inds_list = [0, 4, 15]
+config = ConfigParser()
+config.read('postcode_config.ini')
+postcodes = json.loads(config.get('POSTCODES', 'postcodes'))
+inds_list = json.loads(config.get('CHOSENCATS', 'inds'))
+print(type(postcodes), type(inds_list))
+print(postcodes, inds_list)

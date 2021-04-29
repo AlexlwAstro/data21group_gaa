@@ -71,7 +71,7 @@ available_info_categories = {
     18: "admin_county", 19: "admin_ward", 20: "ced", 21: "ccg", 22: "nuts", 23: "codes"
 }
 
-inds_list = [0, 4, 15]
+inds_list = json.loads(config.get("Foo", "inds_list"))
 
 postcode_print = PostcodeInfo(inds_list)
 postcode_print.select_info_to_show()

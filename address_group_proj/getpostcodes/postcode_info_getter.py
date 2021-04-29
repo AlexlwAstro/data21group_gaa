@@ -1,4 +1,4 @@
-from getpostcodes.postcode_variables import available_info_categories
+from postcode_variables import available_info_categories
 import requests
 import json
 import sys
